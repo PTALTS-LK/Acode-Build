@@ -18,7 +18,7 @@ jobs:
         run: git clone https://github.com/deadlyjack/Acode
       - name: Build
         run: |
-          cd acode
+          cd Acode
           yarn setup
           yarn build android paid dev
           tree > tree.txt
