@@ -1,0 +1,35 @@
+name: Build APK
+
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  Build_APK:
+    runs-on: Ubuntu-latest
+    steps:
+      - name: Install build-dep
+      - run: |
+        sudo apt install nodejs tree
+        sudo npm install -g cordova
+      - name: Clone repo
+      - run: git clone https://github.com/deadlyjack/Acode
+      - name: Build
+      - run: 
+        cd acode
+        yarn setup
+        yarn build android paid dev
+        tree > tree.txt
+        ls -a > ls.txt
+      - name: Upload 
+      uses: actions/upload-artifact@v2
+      with:
+        name: tree
+        path: acode/tree.txt
+      - name: Upload 
+      uses: actions/upload-artifact@v2
+      with:
+        name: ls
+        path: acode/ls.txt
