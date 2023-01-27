@@ -15,7 +15,7 @@ jobs:
           sudo apt install nodejs tree
           sudo npm install -g cordova
       - name: Clone repo
-        run: git clone https://github.com/deadlyjack/Acode
+        run: git clone --recursive https://github.com/deadlyjack/Acode
       - name: Build
         run: |
           cd Acode
