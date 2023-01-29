@@ -20,10 +20,8 @@ jobs:
         run: |
           cd Acode
           yarn setup
-          cordova plugin add cordova-plugin-ftp
-          cordova prepare
           cordova platform android
-          yarn build android paid dev
+          yarn build android paid d
           tree > tree.txt
           ls -a > ls.txt
       - name: Upload 
