@@ -20,7 +20,7 @@ jobs:
         run: |
           cd Acode
           yarn setup
-          cordova platform android
+          cordova platform add android
           yarn build android paid d
           tree > tree.txt
           ls -a > ls.txt
