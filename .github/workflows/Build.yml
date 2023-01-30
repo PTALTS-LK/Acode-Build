@@ -21,7 +21,7 @@ jobs:
           cd Acode
           yarn setup
           cordova platform add android
-          yarn build android paid d
+          yarn build android paid dev
           tree > tree.txt
           ls -a > ls.txt
       - name: Upload 
